@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app/pages/post/article_page.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class ArticlePages extends StatelessWidget {
+  const ArticlePages({super.key});
 
   void _openSlugDialog(BuildContext context) {
     final TextEditingController slugController = TextEditingController();
@@ -50,7 +50,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("HOMEPAGE")),
+      appBar: AppBar(title: const Text("ARTICLES")),
       body: Center(
         child: ElevatedButton(
           onPressed: () => _openSlugDialog(context),
