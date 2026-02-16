@@ -3,16 +3,17 @@ import 'package:mobile_app/pages/post/article_view.dart';
 import 'package:mobile_app/pages/post/article_model.dart';
 import 'package:mobile_app/pages/post/service/article_service.dart';
 
-class ArticlePage extends StatefulWidget {
+class ArticlePageNow extends StatefulWidget {
   final String slug;
+  const ArticlePageNow({Key? key, required this.slug}) : super(key: key);
 
-  const ArticlePage({super.key, required this.slug});
+  // const ArticlePage({super.key, required this.slug});
 
   @override
-  State<ArticlePage> createState() => _ArticlePageState();
+  State<ArticlePageNow> createState() => _ArticlePageState();
 }
 
-class _ArticlePageState extends State<ArticlePage> {
+class _ArticlePageState extends State<ArticlePageNow> {
   late Future<Article> _articleFuture;
 
   @override

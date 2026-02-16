@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app/comp/slider/image_slider_component.dart';
 import 'package:mobile_app/pages/home_page.dart';
+import 'package:mobile_app/pages/privacy-policy/privacypolicy.dart';
 
 void main() => runApp(const MyApp());
 
@@ -84,68 +86,42 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Box(120, 14),
-                    SizedBox(height: 6),
-                    Box(80, 14),
-                  ],
+      body: Column(
+        
+        children: [
+              const SizedBox(height: 20), // 👈 Top spacing
+
+          const ImageSliderComponent(),
+
+          // ---- PRIVACY POLICY TEXT ----
+          const SizedBox(height: 20),
+
+          Center(
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const PrivacyPolicyPage(),
+                  ),
+                );
+              },
+              child: const Text(
+                "Privacy Policy",
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.blue,
+                  decoration: TextDecoration.underline,
                 ),
-                const CircleAvatar(radius: 22, backgroundColor: Colors.grey),
-              ],
+              ),
             ),
-
-            const SizedBox(height: 20),
-            const Box(double.infinity, 150),
-            const SizedBox(height: 20),
-
-            const Text(
-              "Category",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-
-            const SizedBox(height: 10),
-
-            Row(
-              children: const [
-                Box(80, 30),
-                SizedBox(width: 10),
-                Box(90, 30),
-                SizedBox(width: 10),
-                Box(70, 30),
-                SizedBox(width: 10),
-                Box(70, 30),
-              ],
-            ),
-
-            const SizedBox(height: 25),
-
-            const Text(
-              "Courses",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-
-            const SizedBox(height: 16),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [Box(140, 180), Box(140, 180)],
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
 }
+
 
 class CoursePage extends StatelessWidget {
   const CoursePage({super.key});

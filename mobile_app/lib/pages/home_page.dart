@@ -34,7 +34,7 @@ class ArticlePages extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => ArticlePage(slug: slug),
+                      builder: (_) => ArticlePageNow(slug: slug),
                     ),
                   );
                 }
